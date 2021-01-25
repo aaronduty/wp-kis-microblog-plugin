@@ -51,7 +51,7 @@ function ahspfc_load_widgets() {
 }
 class microblog_widget extends WP_Widget {
 
-	function microblog_widget() {
+	function __construct() {
 		$widget_ops = array(
 			'classname' => 'microblog_widget',
 			'description' => 'Allows you to display a list of microblog entries while excluding them from posts.',
@@ -59,7 +59,7 @@ class microblog_widget extends WP_Widget {
 		$control_ops = array(
 			'id_base' => 'microblog-widget',
 		);
-		$this->WP_Widget('microblog-widget', 'Microblog', $widget_ops, $control_ops );
+		parent::__construct('microblog-widget', 'Microblog', $widget_ops, $control_ops );
 	}
 
 	function form ($instance) {
